@@ -9,7 +9,7 @@ Form and submit
 */
 
 const form = $('#js-shopping-list-form');
-const userInput = 'input[type=text]';
+let userInput = 'input[type=text]';
 
 form.submit(event => {
   event.preventDefault();
@@ -25,6 +25,7 @@ form.submit(event => {
       </button>
     </div>
   </li>`);
+  $(event.currentTarget).find(userInput).val('');
 });
 
 //CHECK OFF SHOPPING LIST
@@ -46,6 +47,6 @@ const buttonDelete = '.shopping-item-delete'; //button: check;
 //const shoppingListItem = ('.shopping-item'); //span: contains item;
 
 ul.on('click', buttonDelete, function(event){
-  $(event.currentTarget).closest('li').remove('li');}
+  $(event.currentTarget).closest('li').remove();}
 );
 
