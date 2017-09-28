@@ -10,10 +10,10 @@
 
 $(function(){
   $('.thumbnails').on('click','.thumbnail', function(event){
-    let clickedImgSrc = $(event.currentTarget).find('input').attr('src');
-    let clickedImgAlt = $(event.currentTarget).find('input').attr('alt');
-    console.log(clickedImgSrc);
-    console.log(clickedImgAlt);
+    let clickedImgSrc = $(event.currentTarget).find('img').attr('src');
+    let clickedImgAlt = $(event.currentTarget).find('img').attr('alt');
+    // console.log(clickedImgSrc);
+    // console.log(clickedImgAlt);
     $('.hero img').attr('src', clickedImgSrc);
     $('.hero img').attr('alt', clickedImgAlt);
   });
