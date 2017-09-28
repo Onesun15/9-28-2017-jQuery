@@ -1,7 +1,8 @@
 'use strict';
 /* global $ */
 /*
-Add an item
+
+//ADD AN ITEM
 Check off 
 Delete the item
 Form and submit
@@ -26,14 +27,14 @@ form.submit(event => {
   </li>`);
 });
 
-//function checkItemOff() {
-//shopping-item__checked
+//CHECK OFF SHOPPING LIST
 //listen for 'check' button
-//add (toggle, not append) .shopping-item__checked class
-$('.shopping-list)').on('click', '.shopping-item-toggle', function(){
+//add (toggle, not append) .shopping-item__checked class to div
+const ul = $('.shopping-list'); //<ul> that contains the <li>
+const button = '.shopping-item-toggle'; //button: check;
+const shoppingListItem = ('.shopping-item'); //span: contains item;
 
-}
+ul.on('click', button, function(event){
+  $(event.currentTarget).closest('li').find(shoppingListItem).toggleClass('shopping-item__checked');}
+);
 
-function deleteItem() {
-//remove()
-}
