@@ -12,7 +12,7 @@ Create an array with each value.
 
 */
 
-const result = $('.js-result');
+const result = $('.js-results');
 
 function countToArray(num) {
   const output = [];
@@ -35,19 +35,27 @@ function appendValue(num){
   let makeArray = countToArray(num);
   for(let i=0; i<makeArray.length; i++){
     let currentValue = makeArray[i];
+    let fizzBuzzClass;
+    if(currentValue === 'fizzbuzz') {
+      fizzBuzzClass = 'fizzbuzz';
+    } if (currentValue === 'fizz') {
+      fizzBuzzClass = 'fizz';
+    } if (currentValue === 'buzz') {
+      fizzBuzzClass = 'buzz';
+    }
     console.log(currentValue);
-    $(result).append(`<div class="fizz-buzz-item"<span>${currentValue}</span></div>`);
+    result.append(`<div class="fizz-buzz-item ${fizzBuzzClass}"<span>${currentValue}</span></div>`);
   }
 }
-
 
 //Listen for User Input of Number
 $(function(){
   $('#number-chooser').submit(function(event){
-    $('#number-choice').val();
+    event.preventDefault();
+    let num = $(this).find('input[type=number]').val();
+    appendValue(num);
   });
 });
-
 
 
 //call our function and loop through the output array
