@@ -38,3 +38,14 @@ ul.on('click', button, function(event){
   $(event.currentTarget).closest('li').find(shoppingListItem).toggleClass('shopping-item__checked');}
 );
 
+// DELETE BUTTON
+// Listen for 'delete' button and remove list item
+
+//const ul = $('.shopping-list'); //<ul> that contains the <li>
+const buttonDelete = '.shopping-item-delete'; //button: check;
+//const shoppingListItem = ('.shopping-item'); //span: contains item;
+
+ul.on('click', buttonDelete, function(event){
+  $(event.currentTarget).closest('li').remove('li');}
+);
+
