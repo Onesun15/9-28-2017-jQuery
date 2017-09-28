@@ -31,13 +31,30 @@ function countToArray(num) {
   return output; 
 }
 
-const call = countToArray(16);
+function appendValue(num){
+  let makeArray = countToArray(num);
+  for(let i=0; i<makeArray.length; i++){
+    let currentValue = makeArray[i];
+    console.log(currentValue);
+    $(result).append(`<div class="fizz-buzz-item"<span>${currentValue}</span></div>`);
+  }
+}
 
-console.log(call);
 
-function 
+//Listen for User Input of Number
+$(function(){
+  $('#number-chooser').submit(function(event){
+    $('#number-choice').val();
+  });
+});
 
 
 
+//call our function and loop through the output array
+//grab result and push to X
+//Insert user input > 'num'
 
 
+
+// const call = countToArray(16);
+// console.log(call);
